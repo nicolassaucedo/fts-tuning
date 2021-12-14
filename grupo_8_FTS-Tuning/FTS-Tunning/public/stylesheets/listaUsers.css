@@ -1,0 +1,93 @@
+
+.users-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.users-list .users {
+    width: 80%;
+   
+    
+}
+.users-list .users p{
+    margin: 5px;
+    font-size: 14px;
+}
+.users-list .users .usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-azul);
+    border-radius: 30px;
+    margin: 20px;
+    height: fit-content;
+    padding: 20px;
+}
+.users-list .users button{
+    background-color: var(--color-rojo);
+    color: var(--color-azul);
+    border-radius: 20px;
+    margin: 5px;
+    padding:10px;
+}
+.users-list .users button:hover{
+    background-color: var(--color-azul);
+    color: var(--color-rojo);
+}
+.users-list .users .usuario .photo {
+    width: 80%;
+    height: 140px;
+    margin-bottom: 10px;
+}
+.users-list .users .usuario .photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    
+}
+.users-list .users form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.users-list .users form .select-userType{
+    border-radius: 30px;
+    padding: 7px;
+   
+}
+.search-users input {
+    border-radius: 7px;
+    padding: 7px;
+}
+@media (min-width:768px){
+    .users-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .users-list .users {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .users-list .users .usuario{
+        width:250px;
+    }
+}
+
+@media (min-width:1025px){
+    .users-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (min-width:1625px){
+    .users-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

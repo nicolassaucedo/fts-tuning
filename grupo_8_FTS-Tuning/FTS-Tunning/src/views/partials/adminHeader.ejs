@@ -1,0 +1,65 @@
+<header>
+    <div class="header">
+        <!-- Container izquierdo -->
+        <div class="left-container">
+            <a href="/"><img src="/images/header/Logo.jpeg" alt="Logo"></a>
+        </div>
+        <!-- Parte Central (Input y Menu) -->
+        <div class="input-ul-container">
+            <div id="search-bar">
+                <form action="/busqueda">
+                    <input type="search" placeholder="Busca aquí" name="busqueda">
+                </form>
+                <button>
+                    <img src="/images/header/svg/Lupa.svg" alt="">
+                </button>
+            </div>
+            <hr style="width: 75%;text-align:left;margin-left:0" id="line">
+            <ul>
+                <li><a href="/adminProductos/productos"></i>Todos los Productos</a></li>
+                <li><a href="/adminProductos/cargaProducto"></i>Nuevo Poducto</a></li>
+                <li><a href="/adminProductos/users"></i>Usuarios</a></li>
+            </ul>
+        </div>
+        <!-- Container Derecho -->
+        <div class="right-container">
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+            </label>
+            <div class="sidebar">
+                <ul>
+                    <li><a href="/productos/categoria/frenos"></i>Frenos</a></li>
+                    <li><a href="/productos/categoria/neumaticos"></i>Neumáticos</a></li>
+                    <li><a href="/productos/categoria/escapes"></i>Escapes</a></li>
+                    <li><a href="/productos/categoria/motores"></i>Motor</a></li>
+                    <li><a href="/productos/categoria/interiores"></i>Interior</a></li>
+                    <li><a href="/productos/categoria/volantes"></i>Volantes</a></li>
+                    <% if (session.user && session.user.rol != "undefined") { %>
+                        <li><a href="/Carrito"></i>Carrito</a></li>                    
+                        <a href="/users/profile"><%- session.user.userName %></a>
+                        <a href="/users/logout">Cerrar Sesion</a>
+                    <% } else { %>
+                        <li><a href="/users/login"></i>Login</a></li>
+                        <li><a href="/users/register"></i>Registro</a></li>
+                    <% }%>
+                </ul>
+            </div>
+            <div class="pc">
+                <div class="menu-user">
+                    <ul>
+                        <li><img src="/images/header/svg/Login-registro.svg" alt="Login-registro">
+                            <ul id="baja">
+                                <a href="/users/profile"> <%- session.user.userName %> </a>
+                                <li><a href="/users/logout">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                <a href="/Productos/carrito"><img src="/images/header/svg/Carrito.svg" alt="Carro de compras" id="Carrito"></a>
+            </div>
+        </div>
+    </div>
+</header>

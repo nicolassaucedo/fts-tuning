@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('partials/head.ejs')  %> 
+<body>
+    
+
+
+    <% if (session.user && session.user.rol == "admin") { %>                   
+        <%- include('partials/adminHeader.ejs')  %>
+    <% } else { %>
+      <%- include('partials/header.ejs')  %> 
+    <% }%>
+
+
+
+
+<section class="container-user-about-us">
+
+
+
+    <section class="containerPag">
+        
+        <img src="/images/Logo.jpeg" alt="" class="photo2-icons">
+            
+           <p class="text-description">
+             <b class="text-drection-222"> Nosotros somos FTS Tunning, una empresa especializada en crear tu auto de ensueños mediante nuestros artículos de primera calidad. Nuestra forma de trabajo se basa en generar un sistema de mercado amigable y seguro, en el que en 4 clicks, ya conseguiste tu producto. Brindamos nuestros servicios las 24 horas para todo tipo de clientes para que aunque seas un joven entrando al mundo o un experimentado en el mismo, nosotros podamos solucionar tus inquietudes.</b> 
+           </p> 
+           <br>
+           <br>
+       
+               
+           </section>
+         
+
+
+    <article class="user">
+
+
+        <div> 
+              <img  src="/images/quienesSomos/toby.jpg" alt=""  class="person-photo">
+          
+            
+              <h2 class="info-user">
+                Hola, soy Tobias Racedo, tengo 20 años y vivo en Bella Vista, San Miguel, toda la vida me fascinó la tecnología y apunto a hacer mi vida futura en base a esta.                </h2>
+        </div>
+      
+    </article>
+
+
+    <!--******************************************************************************-->
+
+
+    <article class="user">
+    
+        <div>
+
+            <img src="/images/quienesSomos/santy.jpg" alt=""  class="person-photo">
+            <h2 class="info-user">
+                Hola me llamo Santiago Rafael Bruno, soy de Avellaneda, estudio programación web Full-stack y actualmente estoy haciendo un proyecto de programacion sobre ecommerce llamado FTS Tunning.
+              </h2>
+
+        </div>
+     
+
+    </article>
+    
+    <!--******************************************************************************-->
+    
+    
+    <article class="user">
+       
+            <div>
+
+                <img src="/images/quienesSomos/nicolas.jpg" alt=""  class="person-photo">
+                <h2 class="info-user">
+                    Hola mí nombre es Nicolas saucedo, tengo 20 años vivo en pareja en la la localidad de Florencio Varela, trabajo desde los 15 años, me gusta trabajar en grupo, soy una persona alegre y positiva.
+                  </h2>
+
+            </div>
+      
+    </article>
+    
+    
+    <!--******************************************************************************-->
+    
+    <article class="user">
+     
+            <div>
+
+                <img src="/images/quienesSomos/fabio.jpg" alt=""  class="person-photo">
+                <h2 class="info-user">
+                    Hola, soy Fabio Cicerelli, posadeño de 46 años, me apasionan los autos y la tecnología. Deseo con este proyecto ayudar a los demás a construir el auto de sus sueños.                  </h2>
+
+            </div>
+    
+    </article>
+    
+    
+    
+    
+    <!--******************************************************************************-->
+    
+    
+    
+   
+    
+</section>
+
+
+
+<%- include('partials/footer.ejs')  %> 
+<script src="/javascripts/home.js"></script>
+
+
+</body>
+</html>

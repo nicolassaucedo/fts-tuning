@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')  %> 
+</head>
+
+<body>
+  <% if (session.user && session.user.rol == "admin") { %>                   
+    <%- include('../partials/adminHeader.ejs')  %>
+  <% } else { %>
+  <%- include('../partials/header.ejs')  %> 
+  <% }%>
+
+
+  <div class="mainEdit" >
+   <!-- PERFIL PARA AGREGAR DATOS -->
+    <form id="form" action="/users/profile?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="formulario" >
+        <!-- 1.Datos Personales -->
+        <div class="datos-Personales-Edit">
+          <h2>Datos Personales</h2>
+          <hr>
+          <label for="name"><b>Nombre</b></label>
+          <input type="text" placeholder="Nombre " name="firstName" id="firstName" value="<%- user.firstName %>">
+          <% if (locals.errors && errors.firstName) { %>
+            <small class="small-red"><%= errors.firstName.msg %></small>
+          <% } %>
+          <p class="error" id="firstNameError"></p>
+          <br>
+          <label for="name"><b>Apellido</b></label>
+          <input type="text" placeholder="Apellido" name="lastName" id="lastName" value="<%- user.lastName %>">
+          <p class="error" id="lastNameError"></p>
+          <% if (locals.errors && errors.lastName) { %>
+            <small class="small-red"><%= errors.lastName.msg %></small>
+           <% } %>
+      <br>
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Ingrese su Email" disabled name="email" id="email" value="<%- user.email %>" >
+    <br>
+    <img class="Profile" src="/images/users/<%- user.image %> " alt="">
+    <br>
+          <label for="Perfil"><b>Cambiar foto de Perfil</b></label>
+          <input class="File" type="file" name="Perfil" accept="jpg">
+    
+          <hr>
+        </div>
+
+        <!-- Datos de envio -->
+        <div class="entrega">
+            <h2>Datos de envio</h2>
+            <hr>
+            <label for="Dirrecion"><b>Dirrecion</b></label>
+            <input type="text" placeholder="Direccion" name="address" id="name" value="<%- user.address %>">
+        <br>
+            <label for="Numero"><b>C.Postal</b></label>
+            <input type="number" placeholder="Codigo Postal" name="cp" id="Numero"value="<%- user.cp %>">
+      <br>
+            <label for="name"><b>Provincia</b></label>
+            <input type="text" placeholder="Provincia" name="provincia" id="provincia" value="<%- user.province %>">
+        <br>
+            <label for="name"><b>Localidad</b></label>
+            <input type="text" placeholder="Localidad" name="localidad" id="name" value="<%- user.city %>">
+            <hr>
+          </div>
+        </div>
+          <button type='submit' class="checkout-cta-Edit">Editar</button><br>
+          <span class="error" id="mistakes"></span>
+      </form>    
+      </div>
+   
+  </div>
+  </section>
+  
+    <script src="/javascripts/validations/editProfileValidation.js"></script>
+   <%- include('../partials/footer.ejs')  %> 
+</body>
+</html>

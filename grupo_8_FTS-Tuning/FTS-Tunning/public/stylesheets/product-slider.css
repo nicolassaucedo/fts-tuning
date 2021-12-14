@@ -1,0 +1,115 @@
+.special-offers {
+    background-color: var(--color-azul-transparente);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 30px 5px;
+}
+
+.section__title {
+    font-family: var(--fuente);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.productSlider {
+    font-family: var(--fuente);
+}
+.aSlider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* color: var(--color-rojo); */
+}
+/* .aSlider:visited {
+    color: var(--color-rojo);
+} */
+.productSlide {
+    width: 250px;
+    margin: 10px auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    transition: all 1s ease;
+    z-index: 1;
+}
+
+.productSlide:hover {
+    transform: scale(1.03);
+}
+
+.productSlide .productDiscount {
+    position:absolute;
+    top: 0;
+    right: 0px;
+    padding: 5px;
+    background-color: var(--color-rojo);
+    color: white;
+    border-radius: 0px 10px 0px 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.imageFrame {
+    height: 200px; 
+    /* width: 200px; */
+    object-fit: cover; 
+    /* width: 79px;
+    height: 100px;
+    object-fit: cover; */
+}
+
+.sliderImg {
+    width: 200px;
+    height: 200px;
+    /* max-width: 100%; */
+    /* max-height: 100%; */
+    /* object-fit: cover; */
+    border-bottom: 1px solid var(--color-negro);
+}
+
+.productSlide .productName {
+    font-size: 16px;
+    margin: 10px auto;
+    color: var(--color-negro);
+    font-weight: bold;
+}
+
+.productSlide .productPrice {
+    font-size: 24px;
+    margin: 10px auto;
+    color: var(--color-rojo);
+    font-weight: bold;
+}
+
+.flickity-page-dots { display: none;}
+
+@media screen and (min-width: 768px) {
+    .special-offers {
+        margin-bottom: 70px;
+    }
+    .section__title {
+        margin-bottom: 35px;
+        font-size: 2rem;
+    }
+    .productSlide {
+        width: 33%;
+        height: fit-content;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .productSlide {
+        width: 20%;
+        height: 300px;
+    }
+}

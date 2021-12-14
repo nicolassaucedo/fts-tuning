@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es"></html>
+    <%- include('../partials/head.ejs')  %> 
+
+<body class="login">
+    <header>
+        <!-- Container izquierdo -->
+        <div class="left-container">
+            <a href="/"><img src="/images/header/Logo.jpeg" alt="Logo"></a>
+            
+        </div>
+    </header>
+  <main class="login-main">  
+    <div class="container">
+        <div class="row">
+            
+            
+            <div class="card">
+                <form id="formLogin" class="box" action="/users/login" method="POST" class="form-ad">
+                    <div id="errores" class="errores" style="display:none">
+                        <ul></ul>
+                      </div>
+                      
+                    <input id="email" class="buttom-form" type="email" name="email" placeholder="email">
+                    <p id="emailErr" class="text-danger" style="color: var(--color-rojo);"></p>
+                    <% if (locals.errors && errors.email) { %>
+                        <small class="text-danger"><%= errors.email.msg %> </small>
+                    <% } %>
+                   
+                    <input id="password" class="buttom-form" type="password" name="password" placeholder="Password">
+                    <p id="passErr" class="text-danger" style="color: var(--color-rojo);"></p>
+                    <% if (locals.errors && errors.pass) { %>
+                        <small class="text-danger"><%= errors.pass.msg %> </small>
+                    <% } %>
+
+                    <label><input type="checkbox" id="cbox1" value="first_checkbox">Recordarme la proxima vez</label><br>
+                    <input class="buttom-submit" type="submit" name="remember" value="Iniciar sesión" href="#">
+                        
+                    <% if (locals.errorMsg ) { %>
+                        <small class="text-danger"><%= errorMsg %> </small>
+                     <% } %>
+
+                    <span><a href="">¿Olvidaste tu contraseña?</a></span>
+                    <span><a href="register">Aún no tengo cuenta</a></span>
+                    
+                </form>
+            </div>
+                                                                     
+        </div>
+    </div>
+</main>
+<%- include('../partials/footer.ejs')  %> 
+<<<<<<< HEAD
+
+<script src="/js/loginFrontValidations.js"></script>
+=======
+<script src="/javascripts/validations/loginValidator.js"></script>
+>>>>>>> 85768d202b8848963ce27779beceee606ac94cfd
+</body>
+
+</html>

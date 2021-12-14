@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head.ejs')  %> 
+<body>
+    <% if (session.user && session.user.rol == "admin") { %>                   
+        <%- include('partials/adminHeader.ejs')  %>
+    <% } else { %>
+      <%- include('../partials/header.ejs')  %> 
+    <% }%>
+    
+        <main class="purchase-history">
+            <section class="data">
+                <div class="my-data">
+                    <h4>Mis Datos</h4>
+                    <p>Nombre: Lorem, ipsum dolor.</p>
+                    <p>Teléfono: Lorem, ipsum dolor.</p>
+                    <p>DNI: Lorem, ipsum dolor.</p>
+                    <p>E-mail: Lorem, ipsum dolor.</p>
+                </div>
+                <div class="my-data">
+                    <h4>Mi Dirección</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </section>
+            <section class="history">
+                <div class="purchases">
+                    <div class="photo-history"> <img src="/images/Home/frenos.2.jpg" alt=""></div>
+                    <p>Día: dd/mm/aaaa</p>
+                    <p>Orden Nro: 0001</p>
+                    <p>Precio: $10000</p>
+                </div>
+                <div class="purchases">
+                    <div class="photo-history"> <img src="/images/Home/frenos.2.jpg" alt=""></div>
+                    <p>Día: dd/mm/aaaa</p>
+                    <p>Orden Nro: 0001</p>
+                    <p>Precio: $10000</p>
+                </div>
+            </section>
+
+        </main>
+
+        <%- include('../partials/footer.ejs')  %> 
+</body>
+</html>

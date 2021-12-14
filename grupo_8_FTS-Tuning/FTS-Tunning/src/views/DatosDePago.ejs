@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs')  %> 
+
+<body>
+ 
+  <% if (session.user && session.user.rol == "admin") { %>                   
+    <%- include('partials/adminHeader.ejs')  %>
+<% } else { %>
+  <%- include('partials/header.ejs')  %> 
+<% }%>
+  <div class="mainpay" >
+   <!-- FORMULARIO DE PAGO -->
+    <form action="formpay">
+        <!-- 1.Datos Personales -->
+        <div class="datos-Personales">
+          <h2>1.Datos Personales</h2>
+          <hr>
+          <label for="name"><b>Nombre</b></label>
+          <input type="text" placeholder="Nombre y apellido" name="name" id="name" required
+          >
+      <br>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Ingrese su Email" name="email" id="email" required>
+      <br>
+          <label for="telefono"><b>Telefono</b></label>
+          <input type="tel" placeholder="Ingrese su telefono" name="telefono" id="telefono" required>
+    
+          <hr>
+        </div>
+
+        <!-- 2.Entrega -->
+        <div class="entregaa">
+            <h2>2.Entrega</h2>
+            <label for="email"><b>Calle</b></label>
+            <input type="text" placeholder="Ingrese su calle" name="name" id="name" required
+            >
+            <label for="num"><b>Numero</b></label>
+            <input type="text" placeholder="Numero de calle" name="email" id="email" required>
+        <br>
+            <label for="Numero"><b>Piso</b></label>
+            <input type="number" placeholder="Ingrese su telefono" name="Numero" id="Numero" required>
+      
+            <label for="name"><b>Lo Recibe</b></label>
+            <input type="text" placeholder="Nombre y apellido" name="name" id="name" required
+            >
+        <br>
+            <label for="name"><b>Provincia</b></label>
+            <input type="text" placeholder="Provincia" name="name" id="name" required
+            >
+
+            <label for="name"><b>Ciudad</b></label>
+            <input type="text" placeholder="Ciudad" name="name" id="name" required
+            >
+          </div>
+          <!-- Pago -->
+
+
+          <div class="mediodepago">
+            <h2>3.Pago</h2>
+            <hr>
+            <div> 
+
+
+                <div class="tarjetas">
+                  
+                  <div class="visa"><img src="images/carrito/visa.png" alt="30px" height="30px">
+                    <br>
+                  <label class="radio card-flag-label" for="credito1" title="Visa"><input class="card-flag-radio" id="credito1" name="credito1" tabindex="-1" type="radio" value="2"><span class="card-flag Visa " >Visa</span></label> 
+                  </div>
+<br>                  
+
+                  <div> <img src="images/carrito/mastercard.png" alt="10" height="30px">
+                  <br>
+                <label class="radio card-flag-label" for="credito1" title="Visa"><input class="card-flag-radio" id="credito1" name="credito1" tabindex="-1" type="radio" value="2"><span class="card-flag Visa " >Mastercard
+                </span></label>   </div>
+<br>
+
+         <div><img src="images/carrito/efectivo.png" alt="10" height="30px">
+             <br>
+            <label class="radio card-flag-label" for="credito1" title="Visa"><input class="card-flag-radio" id="credito1" name="credito1" tabindex="-1" type="radio" value="2"><span class="card-flag Visa " >Efectivo
+</span></label>   </div>
+<br>
+                <div><img src="images/carrito/mercado.png" alt="30px" height="30px">
+                <br>
+              <label class="radio card-flag-label" for="credito1" title="Visa"><input class="card-flag-radio" id="credito1" name="credito1" tabindex="-1" type="radio" value="2"><span class="card-flag Visa " >Mercado Pago</span></label> 
+              </div>
+
+                </div>   
+          </div>
+
+          
+   
+          <label for="Numbercard"><b>Numero</b></label>
+          <input type="number" placeholder="numero de su tarjeta" name="name" id="Numbercard" required
+          >
+          <br>
+            <label for="namecard"><b>Nombre en la tarjeta</b></label>
+            <input type="text" placeholder="Como figura en la tarjeta" name="email" id="email" required>
+        <br>
+            <label for="fecha"><b>Fecha de vencimiento</b></label>
+            <input type="date" placeholder="Ingrese la fecha de vencimiento" name="fecha" value="2022-05-10" id="fecha" min="2022" max="2025" required>
+      <br>
+            <label for="codigo"><b>Codigo de seguridad</b></label>
+            <input type="number" placeholder="Ingrese su codigo" name="codigo" id="codigo" required
+      >
+      <br>
+        <label for="dni"><b>DNI</b></label>
+        <input type="number" placeholder="Ingrese su documento" name="name" id="Numbercard" required
+      >
+            <hr>
+          </div>
+          
+
+      </form>
+
+
+
+
+
+
+
+    <aside>
+
+
+        <!-- RESUMEN DE COMPRA -->
+      <div class="summary">
+        <div class="summary-total-items">
+          <span class="total-items"></span><h3> Resumen de Compra</h3>
+        </div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Subtotal</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">
+            $130.00
+          </div>
+          
+        </div>
+        
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">$130.00</div>
+          
+        </div>
+      
+        <div class="summary-checkout">
+          <label><input  type="checkbox" id="cbox1" value="first_checkbox">Cupon de descuento</label>
+        <br>
+        <br>
+          <button class="checkout-cta">comprar</button><br>
+          <button class="checkout-cta">Seguir Comprando</button>
+        </div>
+       
+      </div>
+    </aside>
+  </div>
+ 
+  
+  
+
+   
+  </section>
+  
+  
+   <%- include('partials/footer.ejs')  %> 
+</body>
+</html>

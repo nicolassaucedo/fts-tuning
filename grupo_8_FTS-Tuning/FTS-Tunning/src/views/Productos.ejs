@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs')  %> 
+<body>
+    <% if (session.user && session.user.rol == "admin") { %>                   
+        <%- include('partials/adminHeader.ejs')  %>
+    <% } else { %>
+      <%- include('partials/header.ejs')  %> 
+    <% }%>
+    <main class="product-main">
+        <div class="titular">
+            <% if (n) { %>
+                <h3><%- category.name %> </h3>
+                <div class="tit-des">
+                    <p style="font-weight: bold;">Todos tus <%- category.name.toLowerCase() %> en un solo lugar</p>
+                </div>
+            <% }else { %> 
+                <h3>Todos nuestros productos</h3>
+                <div class="tit-des">
+                    <p style="font-weight: bold;">¡Conoce todos los productos que tenemos para ofrecerte!</p>
+                </div>
+            <% } %>
+             
+        </div>
+        <div class="bb">
+            <!-- Sección de filtro -->
+            <section class="list-product">
+                <div id="lista">
+                    <h2>Categorias</h2>
+                    <ul class="ul-product">
+                        <li><a href="/productos/categoria/frenos">Frenos</a></li>
+                        <li><a href="/productos/categoria/neumaticos">Neumaticos</a></li>
+                        <li ><a href="/productos/categoria/escapes">Escapes</a></li>
+                        <li><a href="/productos/categoria/motores">Motores</a></li>
+                        <li><a href="/productos/categoria/volantes">Volantes</a></li>
+                        <li><a href="/productos/categoria/interiores">Interiores</a></li>
+                        <li><a href="/productos">Todos los productos</a></li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Sección de muestra de productos -->
+            <% if (products.length != 0) { %>
+                
+                <section class="lista-productos">
+                    <% products.forEach(product => { %>
+                        <article class="each-product">
+                            <div>
+                                <img src="/images/productos/<%- product.images[0].name %>" alt="">
+                                <h5><%= product.name %></h5>
+                                <p class="prod-prod-price">$ <%= product.price %></p>
+                                <a href="/productos/<%= product.id %>"><button>Ver producto</button></a>
+                            </div>
+                        </article>
+                        <% }) %>                
+                    </section>
+                <% }else { %>
+                    <article class="prod-not-found">       
+                        <h2>El producto que estas buscando no lo tenemos por el momento,</h2> <h2>¡Pero no dudes en contactarnos para que lo consigamos!</h2>
+                        <img src="images/art-not-found.png" alt="" style="width: 500px; height: 500px;">
+                    </article>
+                <% } %>
+        </div>
+        </main>
+        <%- include('partials/footer.ejs')  %> 
+</body>
+</html>

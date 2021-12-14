@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs')  %> 
+<body>
+
+    <% if (session.user && session.user.rol == "admin") { %>                   
+        <%- include('partials/adminHeader.ejs')  %>
+    <% } else { %>
+      <%- include('partials/header.ejs')  %> 
+    <% }%>
+
+
+<div class="todo-justo">
+   
+        <div >
+            <img src="/images/pulpito.png" alt=""  class="pulpo">
+        
+        </div>
+        
+        <div>
+            <h1 class="slogan">contactanos <b>y Caminemos hacia el exito juntos</b> </h1>
+            
+
+                    
+        </div>
+        
+        <hr>
+             
+
+
+
+        <div class="banner-antention-user" >
+            <a class="icons-wsp" href="https://wa.me/5401144226666"><i class="fab fa-whatsapp"></i> </a>
+            <b class="atc-user">atencion al cliente </b>
+            <p>0113454-567</p>
+        </div>
+    </div>
+             
+    <form action="https://formsubmit.co/fts.tunning01@gmail.com" method="POST"">
+    <div class="form-qs">
+      <h1><B>contactanos</B></h1> <hr>
+      <br>
+              <label for="email"><b>Nombre y apellido</b></label>
+              <input  class="input-qs" type="text" placeholder="Ingrese su nombre y apellido" name="Nombre" id="name" required>
+              <label for="email"><b>Correo Electronico</b></label>
+              <input class="input-qs" type="text" placeholder="Ingrese su Email" name="email" id="email" required>
+              <b>Mensaje o Consulta</b><br>
+              <textarea class="textarea-qs" name="comentarios" rows="10" cols="40"> Mensaje o Consulta...</textarea>
+              <br>        
+              <button  type="submit" class="envias-sq">Enviar</button>
+              <input type="hidden" name="_next" value="http://localhost:3000/us/contact">
+            </div>
+          </form>
+   
+  <%- include('partials/footer.ejs')  %> 
+
+
+</body>
+</html>
